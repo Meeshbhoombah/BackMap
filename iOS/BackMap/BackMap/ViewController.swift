@@ -30,7 +30,6 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
     
     @IBAction func reverseGeocode(sender:UIButton) {
             locationManager.startUpdatingLocationWithCompletionHandler { (latitude, longitude, status, verboseMessage, error) -> () in
-                
                 if error != nil {
                     println(error)
                 } else {
@@ -77,10 +76,10 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
     
     func plotOnMapWithCoordinates(#latitude: Double, longitude: Double) {
         
-        locationManager.reverseGeocodeLocationUsingGoogleWithLatLon(latitude: latitude, longitude: longitude) { (reverseGeocodeInfo, placemark, error) -> Void in
-            
+        locationManager.reverseGeocodeLocationWithLatLon(latitude: latitude, longitude: longitude, onReverseGeocodingCompletionHandler: { (reverseGecodeInfo, placemark, error) -> Void in
+            self.startingTextField.text = reverseGecodeInfo!.valueForKey("formattedAddress") as! String
             self.performActionWithPlacemark(placemark, error: error)
-        }
+        })
     }
     
     
