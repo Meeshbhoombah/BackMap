@@ -21,6 +21,7 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
     @IBOutlet weak var startingTextField: UITextField!
     
     var onSetDirections = false
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,7 +138,7 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
     @IBAction func setDirections(sender: AnyObject) {
         if !onSetDirections {
             setDirectionsButton.setTitle("START TRIP", forState: UIControlState.Normal)
-            setDirectionBottomConstraint.constant = self.view.frame.height/2
+            setDirectionBottomConstraint.constant = 149
             onSetDirections = true
         } else {
             
