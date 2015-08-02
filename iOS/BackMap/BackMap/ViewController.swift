@@ -18,10 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var startingTextField: UITextField!
     
     var onSetDirections = false
+    var textFields: [UITextField]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        textFields = [destinationTextField, startingTextField]
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,5 +48,10 @@ class ViewController: UIViewController {
     }
     
 
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        for field in textFields {
+            field.resignFirstResponder()
+        }
+    }
 }
 
