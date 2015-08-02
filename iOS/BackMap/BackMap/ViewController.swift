@@ -24,6 +24,7 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
     var count = 0
     var fromCoord: CLLocationCoordinate2D!
     var toCoord: CLLocationCoordinate2D!
+    var shouldRemove = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,7 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
                 if error != nil {
                     println(error)
                 } else {
+                    self.shouldRemove = true
                     self.plotOnMapWithCoordinates(latitude: latitude, longitude: longitude)
                 }
         }
@@ -71,7 +73,7 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
     }
     
     func locationFound(latitude:Double, longitude:Double) {
-        
+        shouldRemove = true
         self.plotOnMapWithCoordinates(latitude: latitude, longitude: longitude)
     }
     
@@ -127,7 +129,9 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
     
     func plotPlacemarkOnMap(placemark:CLPlacemark?) {
         
-        removeAllPlacemarkFromMap(shouldRemoveUserLocation:true)
+        if shouldRemove {
+            removeAllPlacemarkFromMap(shouldRemoveUserLocation:true)
+        }
         
         if self.locationManager.isRunning {
             self.locationManager.stopUpdatingLocation()
@@ -157,6 +161,7 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
             pinToBottomConstraint.constant = 12
             onSetDirections = true
         } else {
+            self.view.endEditing(true)
             locationManager.geocodeAddressString(address: destinationTextField.text, onGeocodingCompletionHandler: { (gecodeInfo, placemark, error) -> Void in
                 if error == nil {
                     let latitude = (gecodeInfo?.valueForKey("latitude") as! NSString).doubleValue
@@ -173,16 +178,45 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
                         println(route)
                         println()
                         println(directionInformation)
-                        println()
-                        println(boundingRegion)
+//                        let directionsArray = directionInformation["instructions"]
+//                        let distancesArray = directionInformation["distance"]
+                        
+                        if let web = self.mapView {
+                            self.shouldRemove = false
+                                self.plotOnMapWithCoordinates(latitude: self.toCoord.latitude, longitude: self.toCoord.longitude)
+                            dispatch_async(dispatch_get_main_queue()) {
+                                web.clearsContextBeforeDrawing = true
+                                web.addOverlay(route!)
+                                web.setVisibleMapRect(boundingRegion!, animated: true)
+                            }
+                            
+                        }
                     } else {
                         println(error)
                     }
+                    
+//                    
+//                    for i in 0..<directionInformation["latitude"]!.count {
+//                        
+//                    }
                     
                 })
             })
         }
         
+    }
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay is MKPolyline {
+            var polylineRenderer = MKPolylineRenderer(overlay: overlay)
+//            polylineRenderer.strokeColor = UIColor(red:0.35, green:0.78, blue:0.98, alpha:1.0)
+            polylineRenderer.strokeColor = UIColor(red:0.31, green:0.89, blue:0.76, alpha:1.0)
+            polylineRenderer.lineWidth = 5
+            println("done")
+            return polylineRenderer
+        }
+        
+        return nil
     }
 
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
