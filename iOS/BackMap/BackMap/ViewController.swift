@@ -36,12 +36,12 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
     
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue() {
-            pinToBottomConstraint.constant = keyboardFrame.height
+            pinToBottomConstraint.constant = keyboardFrame.height + 12
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        pinToBottomConstraint.constant = 10
+        pinToBottomConstraint.constant = 12
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -153,8 +153,8 @@ class ViewController: UIViewController, LocationManagerDelegate, CLLocationManag
 
     @IBAction func setDirections(sender: AnyObject) {
         if !onSetDirections {
-            setDirectionsButton.setTitle("START TRIP", forState: UIControlState.Normal)
-            pinToBottomConstraint.constant = 10
+            setDirectionsButton.setTitle("START NAVIGATION", forState: UIControlState.Normal)
+            pinToBottomConstraint.constant = 12
             onSetDirections = true
         } else {
             locationManager.geocodeAddressString(address: destinationTextField.text, onGeocodingCompletionHandler: { (gecodeInfo, placemark, error) -> Void in

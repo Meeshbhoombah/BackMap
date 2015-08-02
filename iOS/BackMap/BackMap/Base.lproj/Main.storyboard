@@ -19,13 +19,17 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HTE-Jz-dNJ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="602"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="587"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiQ-nk-qkc">
-                                <rect key="frame" x="119" y="627" width="136" height="36"/>
+                                <rect key="frame" x="73" y="617" width="229" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Bql-iR-pwS"/>
+                                    <constraint firstAttribute="width" constant="229" id="e7R-Vd-3zP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="SET DIRECTIONS">
-                                    <color key="titleColor" red="0.082352943720000002" green="0.71372550729999995" blue="0.93725496529999996" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="SET DIRECTIONS" backgroundImage="LightGreenRect">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -33,36 +37,36 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="md7-R8-h52">
-                                <rect key="frame" x="16" y="668" width="343" height="30"/>
+                                <rect key="frame" x="16" y="677" width="343" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BQQ-SN-Ahh">
-                                <rect key="frame" x="16" y="734" width="343" height="30"/>
+                                <rect key="frame" x="16" y="751" width="343" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3y-RS-8Ch">
-                                <rect key="frame" x="20" y="703" width="87" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ending Point" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3y-RS-8Ch">
+                                <rect key="frame" x="20" y="712" width="98" height="24"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting Point" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dA-9Z-zE5">
-                                <rect key="frame" x="20" y="769" width="103" height="24"/>
+                                <rect key="frame" x="20" y="786" width="103" height="24"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQr-4v-vSs">
-                                <rect key="frame" x="328" y="769" width="31" height="33"/>
+                                <rect key="frame" x="226" y="782" width="133" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="31" id="8ua-Dk-lwx"/>
-                                    <constraint firstAttribute="height" constant="33" id="ZWe-03-XJK"/>
+                                    <constraint firstAttribute="width" constant="133" id="8ua-Dk-lwx"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZWe-03-XJK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" backgroundImage="Pin">
-                                    <color key="titleColor" red="0.082352943720000002" green="0.71372550729999995" blue="0.93725496529999996" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="CURRENT LOCATION">
+                                    <color key="titleColor" red="0.31372549019607843" green="0.8901960784313725" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -74,7 +78,7 @@
                         <constraints>
                             <constraint firstItem="IQr-4v-vSs" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="6Nb-ds-67h"/>
                             <constraint firstItem="md7-R8-h52" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ANr-Z3-99M"/>
-                            <constraint firstItem="BQQ-SN-Ahh" firstAttribute="top" secondItem="J3y-RS-8Ch" secondAttribute="bottom" constant="7" id="DWJ-86-z8w"/>
+                            <constraint firstItem="BQQ-SN-Ahh" firstAttribute="top" secondItem="J3y-RS-8Ch" secondAttribute="bottom" constant="15" id="DWJ-86-z8w"/>
                             <constraint firstItem="J3y-RS-8Ch" firstAttribute="top" secondItem="md7-R8-h52" secondAttribute="bottom" constant="5" id="Ky0-Tw-mPh"/>
                             <constraint firstAttribute="centerX" secondItem="UiQ-nk-qkc" secondAttribute="centerX" id="LK3-ad-sJp"/>
                             <constraint firstItem="md7-R8-h52" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="OBs-dm-9OP"/>
@@ -82,14 +86,14 @@
                             <constraint firstItem="BQQ-SN-Ahh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="RiX-AY-vSq"/>
                             <constraint firstItem="BQQ-SN-Ahh" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="WrL-M3-o9Y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HTE-Jz-dNJ" secondAttribute="trailing" constant="-16" id="bv7-7o-0jK"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IQr-4v-vSs" secondAttribute="bottom" constant="-135" id="cen-Cs-aHh"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IQr-4v-vSs" secondAttribute="bottom" constant="-145" id="cen-Cs-aHh"/>
                             <constraint firstItem="9dA-9Z-zE5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="fJm-Ly-tGw"/>
                             <constraint firstItem="J3y-RS-8Ch" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="gbR-ga-d5y"/>
                             <constraint firstItem="9dA-9Z-zE5" firstAttribute="top" secondItem="BQQ-SN-Ahh" secondAttribute="bottom" constant="5" id="hsY-3Q-Klf"/>
-                            <constraint firstItem="md7-R8-h52" firstAttribute="top" secondItem="UiQ-nk-qkc" secondAttribute="bottom" constant="5" id="ihN-0A-7B3"/>
+                            <constraint firstItem="md7-R8-h52" firstAttribute="top" secondItem="UiQ-nk-qkc" secondAttribute="bottom" constant="20" id="ihN-0A-7B3"/>
                             <constraint firstItem="HTE-Jz-dNJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="iqM-jQ-Ydw"/>
-                            <constraint firstItem="UiQ-nk-qkc" firstAttribute="top" secondItem="HTE-Jz-dNJ" secondAttribute="bottom" constant="5" id="l5z-KO-M8h"/>
-                            <constraint firstItem="IQr-4v-vSs" firstAttribute="top" secondItem="BQQ-SN-Ahh" secondAttribute="bottom" constant="5" id="xXp-u9-c3Z"/>
+                            <constraint firstItem="UiQ-nk-qkc" firstAttribute="top" secondItem="HTE-Jz-dNJ" secondAttribute="bottom" constant="10" id="l5z-KO-M8h"/>
+                            <constraint firstItem="IQr-4v-vSs" firstAttribute="top" secondItem="BQQ-SN-Ahh" secondAttribute="bottom" constant="1" id="xXp-u9-c3Z"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -108,7 +112,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Pin" width="64" height="101"/>
+        <image name="LightGreenRect" width="229" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
