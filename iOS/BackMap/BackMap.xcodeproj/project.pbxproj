@@ -14,6 +14,9 @@
 		B30784FA1B6D8259007A80E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B30784F91B6D8259007A80E4 /* Images.xcassets */; };
 		B30784FD1B6D8259007A80E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30784FB1B6D8259007A80E4 /* LaunchScreen.xib */; };
 		B30785091B6D8259007A80E4 /* BackMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30785081B6D8259007A80E4 /* BackMapTests.swift */; };
+		D863A6DD1B6DA72700ECBA20 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D863A6DC1B6DA72700ECBA20 /* MapManager.swift */; };
+		D863A6DF1B6DA87E00ECBA20 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D863A6DE1B6DA87E00ECBA20 /* LocationManager.swift */; };
+		D863A6E11B6DB8EA00ECBA20 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863A6E01B6DB8EA00ECBA20 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		B30785021B6D8259007A80E4 /* BackMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30785071B6D8259007A80E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B30785081B6D8259007A80E4 /* BackMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackMapTests.swift; sourceTree = "<group>"; };
+		D863A6DC1B6DA72700ECBA20 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		D863A6DE1B6DA87E00ECBA20 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D863A6E01B6DB8EA00ECBA20 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D863A6E11B6DB8EA00ECBA20 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +68,7 @@
 		B30784E11B6D8258007A80E4 = {
 			isa = PBXGroup;
 			children = (
+				D863A6E01B6DB8EA00ECBA20 /* MapKit.framework */,
 				B30784EC1B6D8259007A80E4 /* BackMap */,
 				B30785051B6D8259007A80E4 /* BackMapTests */,
 				B30784EB1B6D8259007A80E4 /* Products */,
@@ -84,6 +92,8 @@
 				B30784F61B6D8259007A80E4 /* Main.storyboard */,
 				B30784F91B6D8259007A80E4 /* Images.xcassets */,
 				B30784FB1B6D8259007A80E4 /* LaunchScreen.xib */,
+				D863A6DE1B6DA87E00ECBA20 /* LocationManager.swift */,
+				D863A6DC1B6DA72700ECBA20 /* MapManager.swift */,
 				B30784F11B6D8259007A80E4 /* BackMap.xcdatamodeld */,
 				B30784ED1B6D8259007A80E4 /* Supporting Files */,
 			);
@@ -215,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D863A6DD1B6DA72700ECBA20 /* MapManager.swift in Sources */,
 				B30784F51B6D8259007A80E4 /* ViewController.swift in Sources */,
+				D863A6DF1B6DA87E00ECBA20 /* LocationManager.swift in Sources */,
 				B30784F01B6D8259007A80E4 /* AppDelegate.swift in Sources */,
 				B30784F31B6D8259007A80E4 /* BackMap.xcdatamodeld in Sources */,
 			);
@@ -413,6 +425,7 @@
 				B307850E1B6D8259007A80E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B307850F1B6D8259007A80E4 /* Build configuration list for PBXNativeTarget "BackMapTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +434,7 @@
 				B30785111B6D8259007A80E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
